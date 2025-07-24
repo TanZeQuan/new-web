@@ -153,7 +153,7 @@ nav {
     border-radius: 12px;
     overflow: hidden;
     opacity: 0;
-    padding: 10px;
+    padding: 15px;
     margin: 10px;
     visibility: hidden;
     transform: translateY(-10px);
@@ -212,16 +212,16 @@ nav {
 
     .nav-links a {
         text-align: center;
-        font-size: 0.90rem;
+        font-size: 0.98rem;
     }
 
     .dropdown-btn {
-        font-size: 0.85rem;
+        font-size: 0.90rem;
         padding: 6px 12px;
     }
 
     .dropdown-content a {
-        font-size: 0.90rem;
+        font-size: 0.98rem;
     }
 
     .mobile-menu-btn {
@@ -1104,9 +1104,9 @@ nav {
 .section-footer {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
-    padding: 20px 40px;
+    padding: 20px 20px;
     background: linear-gradient(90.06deg, #050505be 0.07%, #0c472bb6 99.95%);
     color: white;
     font-size: 14px;
@@ -1114,28 +1114,29 @@ nav {
     gap: 20px;
 }
 
-.footer-left {
-    flex: 1 1 60%;
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
-.footer-links {
-    display: flex;
+.footer-left {
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 10px;
-    align-items: center;
-    justify-content: flex-start;
 }
 
 .footer-links a {
-    color: white;
+    color: #ffffff;
+    /* dark text */
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    position: relative;
-    transition: var(--transition);
+    font-size: 15px;
+    margin: 0 5px;
+     position: relative;
+      transition: var(--transition);
 }
 
 .footer-links a:hover {
@@ -1158,30 +1159,32 @@ nav {
 }
 
 .footer-links span {
-    color: #ccc;
+    margin: 0 3px;
+    color: #ffffff;
+    /* divider color */
 }
 
-.footer-copyright {
-    font-size: 13px;
-    color: #ccc;
-    margin-top: 5px;
+.footer-center {
+    justify-content: center;
+}
+
+.footer-center span {
+    font-size: 14px;
+    color: #ffffff;
+    /* muted text */
 }
 
 .footer-right {
-    flex: 1 1 30%;
-    display: flex;
     justify-content: flex-end;
-    align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .footer-right a img {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
 }
 
-/* Responsive */
+/* Responsive for mobile */
 @media (max-width: 768px) {
     .section-footer {
         flex-direction: column;
@@ -1189,25 +1192,19 @@ nav {
         text-align: center;
     }
 
-    .footer-left {
-        align-items: center;
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        justify-content: center;
+        flex: none;
+        width: 100%;
     }
 
     .footer-links {
+        flex-wrap: wrap;
         justify-content: center;
-    }
-
-    .footer-links a,
-    .footer-links span {
-        text-align: center;
-    }
-
-    .footer-right {
-        justify-content: center;
-        margin-top: 10px;
     }
 }
-
 
 /*************  RESPONSIVE STYLES  **************/
 @media (min-width: 576px) {
