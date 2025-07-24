@@ -175,14 +175,13 @@
 }
 
 /* Form Elements */
-.login-section {
+/* .login-section {
     text-align: right;
     margin-bottom: 30px;
 }
 
 .login-section a {
     color: #16a34a;
-    /* Green text */
     text-decoration: none;
     border: 2px solid #16a34a;
     padding: 10px 24px;
@@ -196,8 +195,7 @@
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
-    /* green glow */
-}
+} */
 
 
 .form-header h2 {
@@ -346,6 +344,12 @@
     background: #fafbfc;
     position: relative;
     overflow: hidden;
+}
+
+.product-icon-wrapper img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
 }
 
 .product-option:before {
