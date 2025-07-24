@@ -1092,20 +1092,114 @@ nav {
     }
 }
 
+/* footer copyright **/
 .section-footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(90.06deg, #050505be 0.07%, #0c472bb6 99.95%);
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 600;
-    z-index: 100;
-    margin-top: -1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+  background: linear-gradient(90.06deg, #050505be 0.07%, #0c472bb6 99.95%);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  gap: 20px;
 }
+
+.footer-left {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-links span {
+  color: #ccc;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+.footer-right {
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-right a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left {
+    align-items: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-links a,
+  .footer-links span {
+    text-align: center;
+  }
+
+  .footer-right {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
 
 /*************  RESPONSIVE STYLES  **************/
 @media (min-width: 576px) {
