@@ -212,7 +212,18 @@ nav {
 
     .nav-links a {
         text-align: center;
+        font-size: 0.90rem;
     }
+
+    .dropdown-btn {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    .dropdown-content a {
+        font-size: 0.90rem;
+    }
+
     .mobile-menu-btn {
         display: block;
     }
@@ -1366,13 +1377,13 @@ nav {
         background: rgba(0, 0, 0, 0.95);
         flex-direction: column;
         padding: 1rem;
-        gap: 1.2rem;
+        gap: 1.0rem;
         transform: translateY(-100%);
         opacity: 0;
         visibility: hidden;
         transition: var(--transition);
     }
-    
+
     .nav-links.show {
         transform: translateY(0);
         opacity: 1;
