@@ -1,11 +1,13 @@
 /* Hero Section */
 .contact-hero {
-    background: linear-gradient(135deg, #245842 0%, hsl(153, 39%, 45%) 50%, #47eea0 100%);
-    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e8 0%, #d4f1d4 100%);
+    color: #2c3e50;
     padding: 120px 0 80px;
     position: relative;
     overflow: hidden;
     margin-top: 70px;
+    text-align: center;
 }
 
 .contact-hero::before {
@@ -15,7 +17,8 @@
     right: -10%;
     width: 300px;
     height: 300px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(76, 175, 80, 0.1);
+    /* light greenish overlay */
     transform: rotate(45deg);
     border-radius: 20px;
 }
@@ -27,7 +30,7 @@
     left: -5%;
     width: 200px;
     height: 200px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(76, 175, 80, 0.05);
     border-radius: 50%;
 }
 
@@ -64,7 +67,7 @@
 }
 
 .form-sidebar h3 {
-    color: #1e293b;
+    color: #2c3e50;
     margin-bottom: 25px;
     font-size: 20px;
     font-weight: 600;
@@ -92,7 +95,7 @@
 
 .form-sidebar li {
     padding: 15px 16px;
-    color: #64748b;
+    color: #2c3e50;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 12px;
@@ -112,10 +115,10 @@
     right: 16px;
     height: 1px;
     background-color: #d1d5db67;
-    /* Tailwind gray-300 */
+    /* Light grey underline */
 }
 
-
+/* Animated highlight line */
 .form-sidebar li:before {
     content: '';
     position: absolute;
@@ -123,34 +126,37 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.1), transparent);
     transition: left 0.5s ease;
 }
 
+/* Hover style */
 .form-sidebar li:hover {
-    color: #2563eb;
-    background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+    color: #2e7d32;
+    background: linear-gradient(135deg, #f1f8f2 0%, #e0f2e9 100%);
     transform: translateX(8px);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.15);
 }
 
 .form-sidebar li:hover:before {
     left: 100%;
 }
 
+/* Active style */
 .form-sidebar li.sidebar-active {
-    color: #2563eb;
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    color: #2e7d32;
+    background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
     font-weight: 600;
-    border-left: 4px solid #2563eb;
+    border-left: 4px solid #388e3c;
     transform: translateX(8px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 6px 20px rgba(56, 142, 60, 0.25);
 }
 
 .form-sidebar li.sidebar-active:before {
-    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.2), transparent);
     left: 100%;
 }
+
 
 /* Main Form Content */
 .main-form-content {
@@ -200,13 +206,13 @@
 
 .form-header h2 {
     font-size: 32px;
-    color: #1e293b;
+    color: #2c3e50;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 .form-header p {
-    color: #64748b;
+    color: #2c3e50;
     margin-bottom: 25px;
     line-height: 1.6;
     font-size: 16px;
@@ -252,7 +258,7 @@
 .input-label {
     display: block;
     margin-bottom: 10px;
-    color: #374151;
+    color: #2c3e50;
     font-weight: 600;
     font-size: 15px;
 }
@@ -359,13 +365,13 @@
     left: 50%;
     width: 0;
     height: 0;
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(18, 209, 136, 0.411) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-option:hover {
-    border-color: #2563eb;
+    border-color: #a5d6a7;
     background: white;
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
@@ -377,10 +383,10 @@
 }
 
 .product-option.product-selected {
-    border-color: #2563eb;
+    border-color: #8ce28faf;
     background: #eff6ff;
     animation: bounceIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 8px 25px rgba(37, 222, 235, 0.25);
 }
 
 .product-icon-wrapper {

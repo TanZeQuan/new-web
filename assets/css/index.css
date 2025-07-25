@@ -216,7 +216,7 @@ nav {
     }
 
     .dropdown-btn {
-        font-size: 0.90rem;
+        font-size: 0.99rem;
         padding: 6px 12px;
     }
 
@@ -1122,6 +1122,18 @@ nav {
     align-items: center;
     justify-content: center;
 }
+.footer-right img {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.footer-right img:hover {
+    background-color: #f0f0f065;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 
 .footer-left {
     justify-content: flex-start;
