@@ -147,24 +147,30 @@ nav {
     position: absolute;
     top: 100%;
     right: 0;
-    background: rgb(255, 255, 255);
+    background: #ffffff;
     min-width: 180px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     border-radius: 12px;
     overflow: hidden;
     opacity: 0;
-    padding: 15px;
-    margin: 10px;
+    padding: 0 15px;
     visibility: hidden;
-    transform: translateY(-10px);
-    transition: var(--transition);
+    transform: translateY(-10px) scaleY(0.95);
+    transform-origin: top center;
+    transition:
+        opacity 0.25s ease,
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        clip-path 0.5s ease;
     z-index: 1001;
+    clip-path: ellipse(140% 0% at 50% 0%);
 }
 
 .dropdown-content.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    padding: 15px;
+    transform: translateY(0) scaleY(1);
+    clip-path: ellipse(140% 120% at 50% 0%);
 }
 
 .dropdown-content a {
@@ -1122,6 +1128,7 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
 .footer-right img {
     transition: all 0.3s ease;
     border-radius: 8px;
@@ -1147,8 +1154,8 @@ nav {
     text-decoration: none;
     font-size: 15px;
     margin: 0 5px;
-     position: relative;
-      transition: var(--transition);
+    position: relative;
+    transition: var(--transition);
 }
 
 .footer-links a:hover {
@@ -1439,11 +1446,11 @@ nav {
 }
 
 /* animation fade in footer part */
-/* Fade-in animation */
+/* 更平滑的关键帧动画 */
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
 
     100% {
@@ -1452,31 +1459,35 @@ nav {
     }
 }
 
+/* 主动画类 */
 .fade-in-up {
     opacity: 0;
-    animation: fadeInUp 1s ease-out forwards;
+    animation: fadeInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    will-change: opacity, transform;
 }
 
-/* Optional: staggered animation */
+/* 延迟动画类，用于 stagger */
 .fade-delay-1 {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
 .fade-delay-2 {
-    animation-delay: 0.6s;
+    animation-delay: 0.4s;
 }
 
 .fade-delay-3 {
-    animation-delay: 0.9s;
+    animation-delay: 0.6s;
 }
 
+/* Intersection Observer 版本 */
 .fade-element {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1), transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: opacity, transform;
 }
 
-.fade-in {
+.fade-element.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
