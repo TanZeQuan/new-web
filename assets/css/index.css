@@ -72,7 +72,6 @@ nav {
     transition: var(--transition);
     cursor: pointer;
 }
-
 .nav-links {
     display: flex;
     gap: 2rem;
