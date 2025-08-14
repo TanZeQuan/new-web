@@ -1144,121 +1144,141 @@ nav {
     }
 }
 
-/* footer copyright **/
+/* Footer Container */
 .section-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 20px 20px;
     background: linear-gradient(90.06deg, #050505be 0.07%, #0c472bb6 99.95%);
-    color: white;
-    font-size: 14px;
-    font-weight: 500;
-    gap: 20px;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: inherit;
 }
 
-.footer-left,
-.footer-center,
-.footer-right {
-    flex: 1;
+/* Top section: Logo + Social Icons */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 让左右两块垂直居中对齐 */
+    padding: 10px 20px 8px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.footer-logo img {
+    height: 70px;
+    width: auto;
+}
+
+.footer-social-section {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px; /* 根据需要微调 */
+    text-align: center;
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social-icons a {
+    display: inline-block;
+    margin: 0 6px;
+    transition: transform 0.3s ease;
+}
+.footer-social-label {
+    color: #ffffff;         
+    font-size: 18px;        
+    font-weight: bold;       
+    margin-bottom: 10px;     
+    text-align: center;      
+    letter-spacing: 1px;     
+}
+
+.footer-social-icons a img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.footer-social-icons a:hover {
+    transform: scale(1.2); /* 放大 20% */
+}
+
+/* Divider */
+.footer-divider {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 2rem auto;
+    width: 70%;
+}
+
+/* Bottom section: Copyright + Links */
+.footer-bottom {
+    background-color: transparent;
+    padding: 15px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.footer-right img {
-    transition: all 0.3s ease;
-    border-radius: 8px;
-}
-
-.footer-right img:hover {
-    background-color: #f0f0f065;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-
-.footer-left {
-    justify-content: flex-start;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 10px;
+    text-align: center;
+}
+
+.footer-copyright {
+    color: #bdc3c7;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    
 }
 
 .footer-links a {
-    color: #ffffff;
-    /* dark text */
+    color: #bdc3c7;
     text-decoration: none;
-    font-size: 15px;
-    margin: 0 5px;
-    position: relative;
-    transition: var(--transition);
+    font-size: 14px;
+    transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
-}
-
-.footer-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: var(--transition);
-}
-
-.footer-links a:hover::after {
-    width: 100%;
+    color: #59b404;
 }
 
 .footer-links span {
-    margin: 0 3px;
-    color: #ffffff;
-    /* divider color */
+    color: #7f8c8d;
+    font-size: 13px;
 }
 
-.footer-center {
-    justify-content: center;
-}
-
-.footer-center span {
-    font-size: 14px;
-    color: #ffffff;
-    /* muted text */
-}
-
-.footer-right {
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-.footer-right a img {
-    width: 30px;
-    height: 30px;
-}
-
-/* Responsive for mobile */
+/* Responsive (Tablet & Mobile) */
 @media (max-width: 768px) {
-    .section-footer {
+    .footer-top {
         flex-direction: column;
+        gap: 20px;
         align-items: center;
-        text-align: center;
+        padding: 20px;
     }
 
-    .footer-left,
-    .footer-center,
-    .footer-right {
-        justify-content: center;
-        flex: none;
-        width: 100%;
+    .footer-social-section {
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
     }
 
     .footer-links {
-        flex-wrap: wrap;
         justify-content: center;
     }
 }
@@ -1495,6 +1515,12 @@ nav {
         opacity: 1;
         transform: translateY(0);
     }
+}
+/* 当前页面高亮颜色 */
+.nav-links a.active {
+    color: #7ED321; /* 你想要的高亮颜色 */
+    font-weight: bold;
+    border-bottom: 2px solid #7ED321; /* 下划线可选 */
 }
 
 /* 主动画类 */
